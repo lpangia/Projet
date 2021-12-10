@@ -5,9 +5,14 @@
     <title>Wiki'Food</title>
 </head>
 <body>
-{% for recipe in recipes %}
-    {{ recipe.title }}
-{% endfor %}
-
+<div>
+    {% for recipe in recipes %}
+        <div>
+            <h1>{{ recipe.title }}</h1>
+            <div>{{ recipe.ingredients }}</div>
+            <div>{{ recipe.guide }}</div>
+        </div>
+    {% endfor %}
+</div>
 </body>
 </html>
