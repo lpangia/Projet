@@ -24,3 +24,12 @@ def create_recipe(request):
     else:
         form = RecipeForm()
     return render(request, 'create_recipe.html', {'form': form})
+
+def entrees(request):
+    if request.method == 'POST':
+        form = SearchRecipeForm(request.POST)
+        if form.is_valid():
+            recipes = Receipe.objects.filter(title__icontains=form.cleaned_data.get('name'))
+    else:
+        form = SearchRecipeForm()
+    return render(request, "Index.html", {"recipes": recipes, 'form': form})

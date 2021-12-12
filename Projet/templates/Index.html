@@ -14,16 +14,16 @@
                         {{ field }}
                     </div>
                 {% endfor %}
-                <input type="submit" value="Create Recipe" />
+                <input type="submit" value="ok" />
             </form>
         </div>
 
         {% if recipes.count == 0 %}
-            <div>No recipe found</div>
+            <div>Aucune recette trouvée</div>
         {% else %}
-            <div>there is {{ recipes.count }} recipes</div>
+            <div>Il y a {{ recipes.count }} recettes comportant ce mot</div>
             {% for recipe in recipes %}
-                <div>
+                <div class="menu">
                     <h1>{{ recipe.title }}</h1>
                     <div>{{ recipe.ingredients }}</div>
                     <div>{{ recipe.guide }}</div>
