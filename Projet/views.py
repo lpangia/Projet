@@ -6,3 +6,5 @@ from django.shortcuts import render
 def index(request):
     recipes = Receipe.objects.all()
     return render(request, "index.html", {"recipes": recipes})
+
+#def create_recipe

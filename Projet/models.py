@@ -3,9 +3,9 @@ from django.db import models
 
 class Receipe(models.Model):
     title = models.CharField(null=False, max_length=100)
-    photo = models.ImageField(upload_to="pictures/")
+    photo = models.ImageField(upload_to="pictures/", null=True)
     ingredients = models.TextField(null=False)
-    times = models.TimeField(null=False, auto_now=False, auto_now_add=False)
+    times = models.IntegerField(null=False, verbose_name="Temps de préparation en minutes")
     guide = models.TextField(null=False)
 
     class Meta:

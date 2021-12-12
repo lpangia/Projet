@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Wiki'Food</title>
-</head>
-<body>
-<div>
-    {% for recipe in recipes %}
-        <div>
-            <h1>{{ recipe.title }}</h1>
-            <div>{{ recipe.ingredients }}</div>
-            <div>{{ recipe.guide }}</div>
-        </div>
-    {% endfor %}
-</div>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="text">
+        <h1>Bienvenue sur Wiki'Food !</h1>
+        <p>Pour réussir notre objectif, on compte sur vous ! (Comment ça le slogan est déjà pris ?)<br></p>
+        {% for recipe in recipes %}
+            <div>
+                <h1>{{ recipe.title }}</h1>
+                <div>{{ recipe.ingredients }}</div>
+                <div>{{ recipe.guide }}</div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
