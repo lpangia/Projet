@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <link rel="stylesheet" href="static/style.css">
-    <meta charset="UTF-8">
-    <title>Wiki'Food</title>
-</head>
-<body>
-<nav>
-    <ul>
-        <li><a href="{% url 'index' %}">Page d'accueil</a></li>
-        <li><a href="#">Entrées</a></li>
-        <li><a href="#">Plats</a></li>
-        <li><a href="#">Desserts</a></li>
-        <li><a href="#">Encas</a></li>
-        <li><a href="{% url 'create_recipe' %}">Poster une recette</a></li>
-    </ul>
-</nav>
-{% block content %}
-{% endblock %}
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Wiki'Food</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Page d'accueil</a></li>
+                <li><a href="#">Entrées</a></li>
+                <li><a href="#">Plats</a></li>
+                <li><a href="#">Desserts</a></li>
+                <li><a href="#">Encas</a></li>
+                <li><a href="{% url 'create_recipe' %}">Poster une recette</a></li>
+            </ul>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </body>
 </html>
