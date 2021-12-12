@@ -3,7 +3,7 @@ from django.db import models
 
 class Receipe(models.Model):
     title = models.CharField(null=False, max_length=100)
-    photo = models.ImageField(upload_to="pictures/", null=True)
+    photo = models.ImageField(upload_to="pictures/", null=True, blank=True)
     ingredients = models.TextField(null=False)
     times = models.IntegerField(null=False, verbose_name="Temps de préparation en minutes")
     guide = models.TextField(null=False)
