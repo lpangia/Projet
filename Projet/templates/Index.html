@@ -5,18 +5,20 @@
     <div class="text">
         <h1>Bienvenue sur Wiki'Food !</h1>
         <p>Pour réussir notre objectif, on compte sur vous ! (Comment ça le slogan est déjà pris ?)<br></p>
-        <div>
-            <form method="post">
-                {% csrf_token %}
-                {% for field in form %}
-                    <div style="padding-bottom: 20px">
-                        <h2>{{ field.label_tag }}</h2>
-                        {{ field }}
-                    </div>
-                {% endfor %}
-                <input type="button" value="ok" />
-            </form>
-        </div>
+        {% if form %}
+            <div>
+                <form method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div style="padding-bottom: 20px;">
+                            <h2>{{ field.label_tag }}</h2>
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                    <input type="button" value="ok" />
+                </form>
+            </div>
+        {% endif %}
 
         {% if recipes.count == 0 %}
             <div>Aucune recette trouvée</div>
@@ -26,7 +28,11 @@
                 <div class="menu">
                     <h1>{{ recipe.title }}</h1>
                     <div>{{ recipe.ingredients }}</div>
+                    {% if recipe.photo %}
+                        <img src="{{ recipe.photo.url }}" alt="img">
+                    {% endif %}
                     <div>{{ recipe.guide }}</div>
+                    <div>{{ recipe.user }}</div>
                 </div>
             {% endfor %}
         {% endif %}

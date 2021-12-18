@@ -10,12 +10,21 @@
         <nav>
             <ul>
                 <li><a href="{% url 'index' %}">Page d'accueil</a></li>
-                <li><a href="#">Entrées</a></li>
-                <li><a href="#">Plats</a></li>
-                <li><a href="#">Desserts</a></li>
-                <li><a href="#">Encas</a></li>
-                <li><a href="{% url 'create_recipe' %}">Poster une recette</a></li>
+                <li><a href="{% url 'recipe_list' 'Entrées' %}">Entrées</a></li>
+                <li><a href="{% url 'recipe_list' 'Plats' %}">Plats</a></li>
+                <li><a href="{% url 'recipe_list' 'Desserts' %}">Desserts</a></li>
+                <li><a href="{% url 'recipe_list' 'Encas' %}">Encas</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'my_recipe' %}">Mes recettes</a></li>
+                    <li><a href="{% url 'create_recipe' %}">Poster une recette</a></li>
+                {% endif %}
                 <li><a href="#">À propos</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Se déconnecter</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Se connecter</a></li>
+                    <li><a href="{% url 'register' %}">Créer un compte</a></li>
+                {% endif %}
             </ul>
         </nav>
         {% block content %}

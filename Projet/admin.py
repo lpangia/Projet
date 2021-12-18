@@ -2,11 +2,16 @@ from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 
 
-from Projet.models import Receipe
+from Projet.models import Recipe, RecipeCategory
 
 
-class ReceipeAdmin(ModelAdmin):
-    list_display = ["title", "times"]
+class RecipeAdmin(ModelAdmin):
+    list_display = ["title", "times", "category", "user"]
 
 
-admin.site.register(Receipe, ReceipeAdmin)
+class RecipeCategoryAdmin(ModelAdmin):
+    list_display = ["name"]
+
+
+admin.site.register(Recipe, RecipeAdmin)
+admin.site.register(RecipeCategory, RecipeCategoryAdmin)
