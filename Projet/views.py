@@ -29,7 +29,7 @@ def my_recipe(request):
 
 def create_recipe(request):
     if request.method == 'POST':
-        form = RecipeForm(request.POST)
+        form = RecipeForm(request.POST,  request.FILES)
         if form.is_valid():
             recipe = form.save()
             recipe.user = request.user
