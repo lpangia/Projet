@@ -1,15 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
+body{
+  margin: 0px;
+}
 html {
   height:100%;
   background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
 }
 
 nav {
-  max-width: 960px;
+  max-width: 100%;
   mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
   margin: 0 auto;
-  padding: 5px 0;
+  padding: 60px 0;
 }
 
 nav ul {
@@ -38,3 +40,6 @@ nav ul li a:hover {
   color: rgba(0, 35, 122, 0.7);
 }
 
+p, h1, h2{
+  color: #D7D2D2; text-shadow: black 0.1em 0.1em 0.2em
+}
