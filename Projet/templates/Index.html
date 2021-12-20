@@ -6,24 +6,23 @@
         <h1>Bienvenue sur Wiki'Food !</h1>
         <p>Pour réussir notre objectif, on compte sur vous ! (Comment ça le slogan est déjà pris ?)<br></p>
         {% if form %}
-            <div>
-                <form method="post">
+            <div class="searchBar">
+                <form method="post" class="searchBox">
                     {% csrf_token %}
                     {% for field in form %}
-                        <div style="padding-bottom: 20px;">
                             <h2>{{ field.label_tag }}</h2>
                             {{ field }}
-                        </div>
                     {% endfor %}
-                    <input type="button" value="ok" />
+                    <input id="search" type="search" pattern=".*\S.*" required/>
+                <span class="caret"></span>
                 </form>
             </div>
         {% endif %}
 
         {% if recipes.count == 0 %}
-            <div>Aucune recette trouvée</div>
+            <div class="text">Aucune recette trouvée</div>
         {% else %}
-            <div>Il y a {{ recipes.count }} recettes comportant ce mot</div>
+            <div class="text">Il y a {{ recipes.count }} recettes comportant ce mot</div>
             {% for recipe in recipes %}
                 <div class="menu">
                     <h1>{{ recipe.title }}</h1>
