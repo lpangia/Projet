@@ -7,8 +7,9 @@
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
     </head>
     <body>
-        <nav>
-            <ul>
+    <!-- Mise en place du menu avec boucle de condition pour un affichage différent si connecté avec un compte ou non -->
+        <nav class="menu">
+            <ul class="ssmenu">
                 <li><a href="{% url 'index' %}">Page d'accueil</a></li>
                 <li><a href="{% url 'recipe_list' 'Entrées' %}">Entrées</a></li>
                 <li><a href="{% url 'recipe_list' 'Plats' %}">Plats</a></li>

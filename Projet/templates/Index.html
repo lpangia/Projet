@@ -1,21 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="header"></div>
-    <div class="text">
-        <h1>Bienvenue sur Wiki'Food !</h1>
-        <p>Pour réussir notre objectif, on compte sur vous ! (Comment ça le slogan est déjà pris ?)<br></p>
+
+    <!-- Barre de recherche -->
         {% if form %}
-            <div class="searchBar">
-                <form method="post" class="searchBox">
+            <div class="wrap">
+                <form method="post" class="search">
                     {% csrf_token %}
                     {% for field in form %}
                             <h2>{{ field.label_tag }}</h2>
                             {{ field }}
                     {% endfor %}
-                    <input id="search" type="search" pattern=".*\S.*" required/>
-                <span class="caret"></span>
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
                 </form>
+
             </div>
         {% endif %}
 

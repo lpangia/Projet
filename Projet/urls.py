@@ -29,6 +29,7 @@ urlpatterns = [
     path('my_recipe', my_recipe, name='my_recipe'),
     path("register/", register, name="register"),
     path('accounts/', include('django.contrib.auth.urls')),
+
 ]
 
 if settings.DEBUG:
