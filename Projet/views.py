@@ -19,12 +19,12 @@ def index(request):
 
 def recipe_list(request, name):
     recipes = Recipe.objects.filter(category__name=name)
-    return render(request, "Index.html", {"recipes": recipes})
+    return render(request, "recipes.html", {"recipes": recipes})
 
 
 def my_recipe(request):
     recipes = Recipe.objects.filter(user=request.user)
-    return render(request, "Index.html", {"recipes": recipes})
+    return render(request, "recipes.html", {"recipes": recipes})
 
 
 def create_recipe(request):
