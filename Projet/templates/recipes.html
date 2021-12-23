@@ -8,7 +8,7 @@
                 <form method="post">
                     {% csrf_token %}
                     <label for="id_name"></label>
-                    <input type="text" name="name" maxlength="100" id="id_name" placeholder="test placeholder">
+                    <input type="text" name="name" maxlength="100" id="id_name" placeholder="Que recherchez-vous ?">
                     <button type="submit" class="searchButton">
                         <i class="bi bi-search"></i>
                     </button>
@@ -20,7 +20,7 @@
         {% if recipes.count == 0 %}
             <div class="text">Aucune recette trouvée</div>
         {% else %}
-            <div class="text">Il y a {{ recipes.count }} recettes comportant ce mot</div>
+            <div class="text">Il y a {{ recipes.count }} recette(s)</div>
             <div class="card-group">
                 {% for recipe in recipes %}
                     <div class="card" style="max-width: 400px; min-width: 300px; margin: 30px">

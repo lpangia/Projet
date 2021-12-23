@@ -5,22 +5,19 @@
     <!-- Barre de recherche -->
         {% if form %}
             <div class="wrap">
-                <form method="post">
+                <form method="post" class="searchTerm">
                     {% csrf_token %}
                     <label for="id_name"></label>
-                    <input type="text" name="name" maxlength="100" id="id_name" placeholder="test placeholder">
+                    <input type="text" class="input" name="name" maxlength="100" id="id_name" placeholder="Que recherchez-vous ?">
                     <button type="submit" class="searchButton">
                         <i class="bi bi-search"></i>
                     </button>
                 </form>
-
             </div>
         {% endif %}
-
-        {% if recipes.count == 0 %}
+ {% if recipes.count == 0 %}
             <div class="text">Aucune recette trouvée</div>
         {% else %}
-            <div class="text">Il y a {{ recipes.count }} recettes comportant ce mot</div>
             <div class="card-group">
                 {% for recipe in recipes %}
                     <div class="card" style="max-width: 400px; min-width: 300px; margin: 30px">
@@ -42,4 +39,9 @@
                 {% endfor %}
             </div>
         {% endif %}
+      <div>
+        <h1>Bienvenue sur Wiki'Food !</h1>
+        <p>Wiki'Food est un projet collaboratif en ligne. Le but ? Créer le plus gros livre de recette au monde fait pour et par les utilisateurs !<br>
+            Alors, pour réussir notre objectif, on compte sur vous ! (... Comment ça ce slogan est déjà pris ?)</p>
+      </div>
 {% endblock %}
