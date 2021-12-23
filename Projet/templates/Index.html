@@ -5,15 +5,13 @@
     <!-- Barre de recherche -->
         {% if form %}
             <div class="wrap">
-                <form method="post" class="search">
+                <form method="post">
                     {% csrf_token %}
-                    {% for field in form %}
-                            <h2>{{ field.label_tag }}</h2>
-                            {{ field }}
-                    {% endfor %}
-                <button type="submit" class="searchButton">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+                    <label for="id_name"></label>
+                    <input type="text" name="name" maxlength="100" id="id_name" placeholder="test placeholder">
+                    <button type="submit" class="searchButton">
+                        <i class="bi bi-search"></i>
+                    </button>
                 </form>
 
             </div>
@@ -23,18 +21,27 @@
             <div class="text">Aucune recette trouvée</div>
         {% else %}
             <div class="text">Il y a {{ recipes.count }} recettes comportant ce mot</div>
-            {% for recipe in recipes %}
-                <div class="menu">
-                    <h1>{{ recipe.title }}</h1>
-                    <div>{{ recipe.ingredients }}</div>
-                    {% if recipe.photo %}
-                        <img src="{{ recipe.photo.url }}" alt="img">
-                    {% endif %}
-                    <div>{{ recipe.guide }}</div>
-                    <div>{{ recipe.user }}</div>
-                </div>
-            {% endfor %}
+            <div class="row row-cols-1 row-cols-md-4 g-4" style="text-align: -webkit-center;">
+                {% for recipe in recipes %}
+                    <div class="col">
+                        <div class="card" style="max-width: 80%">
+                            {% if recipe.photo %}
+                                <img class="card-img-top" src="{{ recipe.photo.url }}" alt="Card image cap" style="max-height: 250px">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ recipe.title }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ recipe.times }} min</h6>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">{{ recipe.ingredients }}</li>
+                                <li class="list-group-item">{{ recipe.guide }}</li>
+                            </ul>
+                            <div class="card-footer">
+                                <small class="text-muted">{{ recipe.user }}</small>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         {% endif %}
-    </div>
-
 {% endblock %}

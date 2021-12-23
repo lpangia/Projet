@@ -43,15 +43,7 @@ p, h1, h2, .text{
 
 /*Habillage de la barre de recherche*/
 
-.search {
-  width: 100%;
-  position: absolute;
-  display: flex;
-}
-
 .searchButton {
-  width: 40px;
-  height: 36px;
   border: 1px solid #00B4CC;
   background: #00B4CC;
   text-align: center;
@@ -63,9 +55,4 @@ p, h1, h2, .text{
 
 .wrap{
   font-family: 'Open Sans', sans-serif;
-  width: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
