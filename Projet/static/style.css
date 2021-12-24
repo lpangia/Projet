@@ -28,7 +28,7 @@ body{
   padding: 18px;
   font-family: "Open Sans";
   text-transform:uppercase;
-  color: ghostwhite; text-shadow: 0.1em 0.1em 0.2em black;
+  color: white; text-shadow: 0.1em 0.1em 0.2em black;
   font-size: 18px;
   text-decoration: none;
   display: block;
@@ -82,4 +82,39 @@ p{
 
 .card-group{
   padding-top: 3em;
+}
+
+/*Formulaire pour poster une recette*/
+.recipe{
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.recipe, h2{
+  text-align: center;
+  padding-top: 1em;
+}
+.input_recipe, .input_login{
+  border: 5px solid #f69d3c;
+  border-radius: 5px 5px 5px 5px;
+  background-color: #f69d3c;
+  color: white; text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+.login{
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
+.form-group{
+  padding-top: 1em;
+  padding-left: 1em;
+  line-height: 200%;
+}
+
+.button-register{
+  border: 5px solid #f69d3c;
+  border-radius: 5px 5px 5px 5px;
+  background-color: #f69d3c;
+  color: white; text-shadow: 0.1em 0.1em 0.2em black;
 }

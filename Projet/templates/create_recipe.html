@@ -2,8 +2,8 @@
 
 {% block content %}
 
-    <div>
-        <form method="post" enctype="multipart/form-data">
+    <div class="recipe">
+        <form class="form_recipe" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
                 <div style="padding-bottom: 20px">
@@ -11,7 +11,7 @@
                     {{ field }}
                 </div>
             {% endfor %}
-            <input type="submit" value="Poster ma recette" />
+            <input class="input_recipe" type="submit" value="Poster ma recette" />
         </form>
     </div>
 
