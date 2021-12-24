@@ -63,12 +63,19 @@ p{
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  margin-left: -5px;
+  padding-bottom: 3px
 }
 
 .input{
   border: 5px solid #f69d3c;
   border-right: none;
   border-radius: 5px 0 0 5px;
+  width: 300px;
+}
+
+.helptext{
+  display: none;
 }
 
 .wrap {

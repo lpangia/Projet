@@ -20,7 +20,7 @@
                     <li><a href="{% url 'my_recipe' %}">Mes recettes</a></li>
                     <li><a href="{% url 'create_recipe' %}">Poster une recette</a></li>
                 {% endif %}
-                <li><a href="#">À propos</a></li>
+                <li><a href="{% url 'about' %}">À propos</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">Se déconnecter</a></li>
                 {% else %}

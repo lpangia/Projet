@@ -7,11 +7,12 @@ from django.contrib.auth import login
 
 
 def index(request):
-    recipes = Recipe.objects.all()
+    recipes = None
     if request.method == 'POST':
         form = SearchRecipeForm(request.POST)
         if form.is_valid():
-            recipes = Recipe.objects.filter(title__icontains=form.cleaned_data.get('name'))
+            if form.cleaned_data.get('name') != '':
+                recipes = Recipe.objects.filter(title__icontains=form.cleaned_data.get('name'))
     else:
         form = SearchRecipeForm()
     return render(request, "Index.html", {"recipes": recipes, 'form': form})
@@ -25,6 +26,10 @@ def recipe_list(request, name):
 def my_recipe(request):
     recipes = Recipe.objects.filter(user=request.user)
     return render(request, "recipes.html", {"recipes": recipes})
+
+
+def about(request):
+    return render(request, "about.html")
 
 
 def create_recipe(request):

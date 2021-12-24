@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from Projet import settings
-from Projet.views import index, create_recipe, recipe_list, register, my_recipe
+from Projet.views import index, create_recipe, recipe_list, register, my_recipe, about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +28,7 @@ urlpatterns = [
     path('recipe_list/<name>', recipe_list, name='recipe_list'),
     path('my_recipe', my_recipe, name='my_recipe'),
     path("register/", register, name="register"),
+    path("about/", about, name="about"),
     path('accounts/', include('django.contrib.auth.urls')),
 
 ]
