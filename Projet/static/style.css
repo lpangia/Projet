@@ -2,6 +2,9 @@
 
 body{
   background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  font-family: "Open Sans";
+  padding: 0;
+  margin: 0;
 }
 
 /*Habilage du menu*/
@@ -40,21 +43,36 @@ body{
   color: white;
 }
 
-/*Habillage du texte du site*/
-p, h1, h2, .text{
+/*Habillage du blabla du site*/
+p, h1, h2, h3, .text{
   font-family: "Open Sans";
 }
 
 h1, .text{
   padding-left: 1em;
-  padding-top: 2em;
+  padding-top: 1em;
 }
-p{
+p, h3{
   padding-left: 1em;
 }
 
-/*Habillage de la barre de recherche*/
+h3{
+  padding-top: 1em;
+}
 
+.title-container{
+  font-weight: bold;
+}
+
+.board-blabla, .video-blabla{
+  max-width: 40%;
+}
+
+.video-blabla, .video{
+  float: right;
+}
+
+/*Habillage de la barre de recherche*/
 .searchButton {
   border: 1px solid #f69d3c;
   background: #f69d3c;
@@ -84,16 +102,16 @@ p{
   position: absolute;
   padding-top: 10px;
   padding-left: 10px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans";
 }
 
 .card-group{
   padding-top: 3em;
 }
 
-/*Formulaire pour poster une recette*/
+/*Formulaires*/
 .recipe{
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans";
   padding-top: 1em;
   padding-bottom: 1em;
 }
@@ -124,4 +142,38 @@ p{
   border-radius: 5px 5px 5px 5px;
   background-color: #f69d3c;
   color: white; text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+/*Le tableau*/
+.wrap-board{
+  padding-bottom: 1em;
+  padding-left: 1em;
+}
+
+.board, .line, .cell {
+  width: 60%;
+  border-collapse: collapse;
+  border: 3px solid #f69d3c;
+  padding: 10px;
+  text-align: center;
+  font-family: "Open Sans";
+}
+
+.about-container{
+  max-width: 40%;
+}
+
+/*Footer*/
+.footer{
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  color: white; text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+.team, .contacts, .thanks{
+  border-collapse: collapse;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  font-family: "Open Sans";
 }
