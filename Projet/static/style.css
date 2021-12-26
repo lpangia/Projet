@@ -149,7 +149,31 @@ h3{
   padding-left: 1em;
 }
 
-.board, .line, .cell {
+.cell1 {
+  width: 30%;
+  border-collapse: collapse;
+  border: 3px solid #f69d3c;
+  padding: 10px;
+  text-align: center;
+  font-family: "Open Sans";
+}
+.cell2 {
+  width: 20%;
+  border-collapse: collapse;
+  border: 3px solid #f69d3c;
+  padding: 10px;
+  text-align: center;
+  font-family: "Open Sans";
+}
+.cell3 {
+  width: 20%;
+  border-collapse: collapse;
+  border: 3px solid #f69d3c;
+  padding: 10px;
+  text-align: center;
+  font-family: "Open Sans";
+}
+.cell4 {
   width: 100%;
   border-collapse: collapse;
   border: 3px solid #f69d3c;
