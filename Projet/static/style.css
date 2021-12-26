@@ -65,11 +65,10 @@ h3{
 }
 
 .board-blabla, .video-blabla{
-  max-width: 40%;
+  max-width: 90%;
 }
 
 .video-blabla, .video{
-  float: right;
 }
 
 /*Habillage de la barre de recherche*/
@@ -151,7 +150,7 @@ h3{
 }
 
 .board, .line, .cell {
-  width: 60%;
+  width: 100%;
   border-collapse: collapse;
   border: 3px solid #f69d3c;
   padding: 10px;
@@ -160,7 +159,7 @@ h3{
 }
 
 .about-container{
-  max-width: 40%;
+  max-width: 90%;
 }
 
 /*Footer*/
