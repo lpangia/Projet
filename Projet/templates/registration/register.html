@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <div class="wrap-register">
+    <div class="text-register">Pseudo<br>Mot de passe<br>Confirmation du mot de passe</div>
     <form method="POST" class="form-group">
         {% csrf_token %}
         {{ form }}
         <button type="submit" class="button-register">S'inscrire</button>
     </form>
+    </div>
 {% endblock %}

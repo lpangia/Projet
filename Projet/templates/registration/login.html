@@ -2,9 +2,12 @@
 
 {% block content %}
     <h2>Connectez-vous</h2>
+    <div class="wrap-login">
+    <div class="text-login">Pseudo<br>Mot de passe</div>
     <form class="login" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="input_login" type="submit">Connexion</button>
     </form>
+    </div>
 {% endblock %}
