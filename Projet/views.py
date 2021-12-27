@@ -53,7 +53,7 @@ def register(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Registration successful.")
-            return redirect("main:homepage")
+            return redirect("index")
         messages.error(request, "Unsuccessful registration. Invalid information.")
 
     return render(request, "registration/register.html", {"form": form})
